@@ -2,9 +2,17 @@ local-*
 .idea
 *.iml
 .gradle
-build/
+.class
+.xml
+.bin
+.css
 out/
 
+
+build/*
+source/
+# Allow
+!build/libs/
 # Ignore Gradle GUI config
 gradle-app.setting
 
@@ -14,7 +22,7 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.nar
 *.ear
