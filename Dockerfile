@@ -33,7 +33,7 @@ RUN wget -N https://download.newrelic.com/newrelic/java-agent/newrelic-agent/cur
 
 #ADD ./newrelic/* ./newrelic/
 ADD ./connect-properties ./connect-properties/
-COPY build/libs/kafka-connect-dynamodb-0.10.0.dirty.jar ./distribution/
+COPY build/libs/kafka-connect-dynamodb.jar ./distribution/
 ADD ./entrypoint.sh ./
 RUN chown root.root ./entrypoint.sh
 RUN chmod 700 ./entrypoint.sh

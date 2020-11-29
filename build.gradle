@@ -104,6 +104,9 @@ dependencies {
 
 shadowJar {
 	dependencies {
+        archiveBaseName.set('kafka-connect-dynamodb')
+        archiveClassifier.set('')
+        archiveVersion.set('')
 		// provided in the connect classpath
 		exclude(dependency("org.apache.kafka:connect-api:${rootProject.ext.kafkaConnectApiVersion}"))
 		exclude(dependency("org.apache.kafka:kafka-clients:${rootProject.ext.kafkaConnectApiVersion}"))
