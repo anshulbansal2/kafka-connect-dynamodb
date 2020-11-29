@@ -1,6 +1,7 @@
 connector.class=DynamoDBSourceConnector
-tasks.max=5
+name=${KCD_NAME}
+tasks.max=1
 aws.region=ap-south-1
-dynamodb.table.whitelist=user-activities
+dynamodb.table.whitelist=${KCD_TABLE_NAME}
 kafka.topic.prefix=dynamodb-
-init.sync.delay.period": 60
+init.sync.delay.period=60

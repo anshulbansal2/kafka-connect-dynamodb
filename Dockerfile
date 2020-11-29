@@ -24,8 +24,6 @@ ENV KAFKA_HOME /opt/kafka_2.12-2.6.0
 #ENV KAFKA_HOME /opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION}
 ENV PATH $PATH:$JAVA_HOME/bin $PATH:$KAFKA_HOME/bin
 
-
-RUN mkdir /logs/
 WORKDIR /usr/local/goibibo/source/kafka-connect-dynamodb
 
 RUN wget -N https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip && \
@@ -33,7 +31,7 @@ RUN wget -N https://download.newrelic.com/newrelic/java-agent/newrelic-agent/cur
 
 #ADD ./newrelic/* ./newrelic/
 ADD ./connect-properties ./connect-properties/
-COPY build/libs/kafka-connect-dynamodb.jar ./distribution/
+ADD build/libs/kafka-connect-dynamodb.jar ./distribution/
 ADD ./entrypoint.sh ./
 RUN chown root.root ./entrypoint.sh
 RUN chmod 700 ./entrypoint.sh

@@ -24,6 +24,15 @@ In our implementation we opted to use Amazon Kinesis Client with DynamoDB Stream
 * Amazon Kinesis Client 1.9.1
 * DynamoDB Streams Kinesis Adapter 1.5.2
 
+## Quick start
+```bash
+git clone git@github.com:anshulbansal2/kafka-connect-dynamodb.git
+cd kafka-connect-dynamodb
+docker build -t kafka-connect-dynamodb-source .
+docker run -it -e KCD_BROKER=broker_ip:port -e KCD_NAME=dynamodb-source -e KCD_TABLE_NAME=dynamodb_table_name -p 8001:8001 --name kafka-connect-dynamodb-source -d kafka-connect-dynamodb-source:latest
+```
+   
+   
 ## Documentation
 * [Getting started](docs/getting-started.md)
 * [In depth](docs/details.md)
